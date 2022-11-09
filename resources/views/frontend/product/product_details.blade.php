@@ -730,7 +730,7 @@ $(document).ready(function(){
     transform: scale(2.5);
 }
 </style>
-<style>
+<!-- <style>
 	/**
  * EasyZoom core styles
  */
@@ -796,7 +796,7 @@ $(document).ready(function(){
 	height: 100%;
 	margin-left: 20px;
 }
-</style>
+</style> -->
 
 <script type="text/javascript">
 	$(document).ready(function(){
