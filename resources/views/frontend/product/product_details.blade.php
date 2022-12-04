@@ -101,7 +101,7 @@
             <div class="single-product-gallery-item easyzoom easyzoom--overlay easyzoom--with-thumbnails" id="slide{{ $img->id }}">
   <a data-lightbox="image-1" data-title="Gallery" href="{{ asset($img->photo_name ) }} ">
   	              
-                     <img id="mainImg" class="img-responsive " alt="" src="{{ asset($img->photo_name ) }} " data-zoom-image="{{ asset($img->photo_name ) }}" />
+                     <img id="mainImg" class="img-responsive zoom " alt="" src="{{ asset($img->photo_name ) }} " data-zoom-image="{{ asset($img->photo_name ) }}" />
                    
                 </a>
             </div><!-- /.single-product-gallery-item -->
@@ -715,7 +715,7 @@ $(document).ready(function(){
 </script>
 <style type="text/css">
 	img.zoom {
-    width: 350px;
+    width: 320px;
     height: 300px;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;

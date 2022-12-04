@@ -37,7 +37,7 @@
 	 @foreach($subsubcategory as $item)
 	 <tr>
 		<td> {{ $item['category']['category_name_en'] }}  </td>
-		<td>{{ $item['subcategory']['subcategory_name_en'] }}</td>
+		<td>{{ $item['subcategory']['subcategory_name_en'] ?? 'N/A'}}</td>
 		 <td>{{ $item->subsubcategory_name_en }}</td>
 		<td width="30%">
  <a href="{{ route('subsubcategory.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
@@ -121,15 +121,7 @@
 	</div>
 
 
-	<div class="form-group">
-		<h5>Sub-SubCategory Hindi  <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="subsubcategory_name_hin" class="form-control" >
-     @error('subsubcategory_name_hin') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror 
-	  </div>
-	</div> 
+	
 					 
 
 			 <div class="text-xs-right">
