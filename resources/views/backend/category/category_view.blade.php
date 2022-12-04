@@ -90,15 +90,8 @@
 	</div>
 
 
-	<div class="form-group">
-		<h5>Category Hindi <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="category_name_hin" class="form-control" >
-     @error('category_name_hin') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror 
-	  </div>
-	</div>
+	
+	
 
 
 	<div class="form-group">
