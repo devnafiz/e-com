@@ -28,6 +28,7 @@
 							<tr>
 								<th>Image </th>
 								<th>Product En</th>
+								<th>Product Code</th>
 								<th>Product Price </th>
 								<th>Quantity </th>
 								<th>Discount </th>
@@ -41,6 +42,7 @@
 	 <tr>
 		<td> <img src="{{ asset($item->product_thambnail) }}" style="width: 60px; height: 50px;">  </td>
 		<td>{{ $item->product_name_en }}</td>
+		<td>{{ $item->product_code }}</td>
 		 <td>{{ $item->selling_price }} $</td>
 		 <td>{{ $item->product_qty }} Pic</td>
 
