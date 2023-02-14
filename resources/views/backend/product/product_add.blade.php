@@ -122,26 +122,20 @@
 			</div> <!-- end col md 4 -->
 
 
-			<div class="col-md-4">
+		<!--<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Name Hin <span class="text-danger">*</span></h5>
+			<h5>Product Name Hin <span class="text-danger"></span></h5>
 			<div class="controls">
-				<input type="text" name="product_name_hin" class="form-control" required="">
+				<input type="text" name="product_name_hin" class="form-control" >
      @error('product_name_hin') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	 		 </div>
 		</div>
 				
-			</div> <!-- end col md 4 -->
-			
-		</div> <!-- end 2nd row  -->
-
-
-
-<div class="row"> <!-- start 3RD row  -->
-			<div class="col-md-4">
+			</div>-->
+				<div class="col-md-4">
 
 	  <div class="form-group">
 			<h5>Product Code <span class="text-danger">*</span></h5>
@@ -155,6 +149,13 @@
 				
 			</div> <!-- end col md 4 -->
 
+			
+		</div> <!-- end 2nd row  -->
+
+
+
+<div class="row"> <!-- start 3RD row  -->
+		
 			<div class="col-md-4">
 
 				 <div class="form-group">
@@ -170,7 +171,7 @@
 			</div> <!-- end col md 4 -->
 
 
-			<div class="col-md-4">
+		<!--	<div class="col-md-4">
 
 				 <div class="form-group">
 			<h5>Product Tags En <span class="text-danger">*</span></h5>
@@ -182,30 +183,9 @@
 	 		 </div>
 		</div>
 				
-			</div> <!-- end col md 4 -->
+			</div>--> <!-- end col md 4 -->
 			
-		</div> <!-- end 3RD row  -->
-
-
-
-
-
-
-<div class="row"> <!-- start 4th row  -->
-			<div class="col-md-4">
-
-	    <div class="form-group">
-			<h5>Product Tags Hin <span class="text-danger">*</span></h5>
-			<div class="controls">
-	 <input type="text" name="product_tags_hin" class="form-control" value="Lorem,Ipsum,Amet" data-role="tagsinput" required="">
-     @error('product_tags_hin') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	 		 </div>
-		</div>
-				
-			</div> <!-- end col md 4 -->
-
+			
 			<div class="col-md-4">
 
 				 <div class="form-group">
@@ -218,57 +198,9 @@
 	 		 </div>
 		</div>
 				
-			</div> <!-- end col md 4 -->
-
-
-			<div class="col-md-4">
-
-				 <div class="form-group">
-			<h5>Product Size Hin <span class="text-danger">*</span></h5>
-			<div class="controls">
-	 <input type="text" name="product_size_hin" class="form-control" value="Small,Midium,Large" data-role="tagsinput" required="">
-     @error('product_size_hin') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	 		 </div>
-		</div>
-				
-			</div> <!-- end col md 4 -->
+			</div>
 			
-		</div> <!-- end 4th row  -->
-
-		 
-
-<div class="row"> <!-- start 5th row  -->
-			<div class="col-md-4">
-
-	    <div class="form-group">
-			<h5>Product Color En <span class="text-danger">*</span></h5>
-			<div class="controls">
-	 <input type="text" name="product_color_en" class="form-control" value="red,Black,Amet" data-role="tagsinput" required="">
-     @error('product_color_en') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	 		 </div>
-		</div>
-				
-			</div> <!-- end col md 4 -->
-
-			<div class="col-md-4">
-
-				 <div class="form-group">
-			<h5>Product Color Hin <span class="text-danger">*</span></h5>
-			<div class="controls">
-	 <input type="text" name="product_color_hin" class="form-control" value="red,Black,Large" data-role="tagsinput" required="">
-     @error('product_color_hin') 
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	 		 </div>
-		</div>
-				
-			</div> <!-- end col md 4 -->
-
-
+			<!-- end col md 4 -->
 			<div class="col-md-4">
 
 				<div class="form-group">
@@ -281,28 +213,71 @@
 	 	  </div>
 		</div>
 				
-			</div> <!-- end col md 4 -->
+			</div>
 			
-		</div> <!-- end 5th row  -->
+		</div> <!-- end 3RD row  -->
 
 
 
 
-<div class="row"> <!-- start 6th row  -->
-			<div class="col-md-4">
+
+
+<div class="row"> <!-- start 4th row  -->
+			
+
+
+
+			
+			<!-- end col md 4 -->
+			
+		</div> <!-- end 4th row  -->
+
+		 
+
+<div class="row"> <!-- start 5th row  -->
+			<!--<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Discount Price <span class="text-danger">*</span></h5>
+			<h5>Product Color En <span class="text-danger">*</span></h5>
 			<div class="controls">
-	 <input type="text" name="discount_price" class="form-control"  required="">
+	 <input type="text" name="product_color_en" class="form-control" value="red,Black,Amet" data-role="tagsinput">
+     @error('product_color_en') 
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
+	 		 </div>
+		</div>
+				
+			</div>--> <!-- end col md 4 -->
+
+			<!--<div class="col-md-4">
+
+				 <div class="form-group">
+			<h5>Product Color Hin <span class="text-danger"></span></h5>
+			<div class="controls">
+	 <input type="text" name="product_color_hin" class="form-control" value="red,Black,Large" data-role="tagsinput" >
+     @error('product_color_hin') 
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
+	 		 </div>
+		</div>
+				
+			</div>--> <!-- end col md 4 -->
+
+
+			 <!-- end col md 4 -->
+				<div class="col-md-4">
+
+	    <div class="form-group">
+			<h5>Product Discount Price <span class="text-danger"></span></h5>
+			<div class="controls">
+	 <input type="text" name="discount_price" class="form-control"  >
      @error('discount_price') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	 		 </div>
 		</div>
 				
-			</div> <!-- end col md 4 -->
-
+			</div>
 			<div class="col-md-4">
 
 	    <div class="form-group">
@@ -317,10 +292,8 @@
 		</div>
 				 
 				
-			</div> <!-- end col md 4 -->
-
-
-			<div class="col-md-4">
+			</div>
+				<div class="col-md-4">
 
 	    <div class="form-group">
 			<h5>Multiple Image <span class="text-danger">*</span></h5>
@@ -335,7 +308,22 @@
 		</div>
 				 
 				
-			</div> <!-- end col md 4 -->
+			</div>
+			
+			
+			
+		</div> <!-- end 5th row  -->
+
+
+
+
+<div class="row"> <!-- start 6th row  -->
+		 <!-- end col md 4 -->
+
+			 <!-- end col md 4 -->
+
+
+		 <!-- end col md 4 -->
 			
 		</div> <!-- end 6th row  -->
 
@@ -344,28 +332,28 @@
 
 
 <div class="row"> <!-- start 7th row  -->
-			<div class="col-md-6">
+			<div class="col-md-12">
 
 	    <div class="form-group">
 			<h5>Short Description English <span class="text-danger">*</span></h5>
 			<div class="controls">
-	<textarea name="short_descp_en" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>     
+	<textarea name="short_descp_en" id="textarea" class="form-control" required placeholder="Textarea text" rows="5"></textarea>     
 	 		 </div>
 		</div>
 				
 			</div> <!-- end col md 6 -->
 
-			<div class="col-md-6">
+			<!--<div class="col-md-6">
 
 	     <div class="form-group">
-			<h5>Short Description Hindi <span class="text-danger">*</span></h5>
+			<h5>Short Description Hindi <span class="text-danger"></span></h5>
 			<div class="controls">
 	<textarea name="short_descp_hin" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>     
 	 		 </div>
 		</div>
 				 
 				
-			</div> <!-- end col md 6 -->		 
+			</div>--> <!-- end col md 6 -->		 
 			
 		</div> <!-- end 7th row  -->
 
@@ -374,7 +362,7 @@
 		 
 	 
 <div class="row"> <!-- start 8th row  -->
-			<div class="col-md-6">
+			<div class="col-md-12">
 
 	    <div class="form-group">
 			<h5>Long Description English <span class="text-danger">*</span></h5>
@@ -387,10 +375,10 @@
 				
 			</div> <!-- end col md 6 -->
 
-			<div class="col-md-6">
+		<!--	<div class="col-md-6">
 
 	     <div class="form-group">
-			<h5>Long Description Hindi <span class="text-danger">*</span></h5>
+			<h5>Long Description Hindi <span class="text-danger"></span></h5>
 			<div class="controls">
 	<textarea id="editor2" name="long_descp_hin" rows="10" cols="80">
 		Long Description Hindi
@@ -399,7 +387,7 @@
 		</div>
 				 
 				
-			</div> <!-- end col md 6 -->		 
+			</div>--> <!-- end col md 6 -->		 
 			
 		</div> <!-- end 8th row  -->
 
@@ -449,13 +437,13 @@
 
 <div class="col-md-6">
 
-	    <div class="form-group">
-			<h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
-			<div class="controls">
-	 <input type="file" name="file" class="form-control" > 
+	 <!--   <div class="form-group">-->
+		<!--	<h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>-->
+		<!--	<div class="controls">-->
+	 <!--<input type="file" name="file" class="form-control" > -->
 	  
-	 		 </div>
-		</div>
+	 <!--		 </div>-->
+		<!--</div>-->
 				 
 				
 			</div> <!-- end col md 4 -->

@@ -84,7 +84,7 @@ class ProductController extends Controller
 
       ]);
 
-      dd( $product_id);
+     // dd( $product_id);
 
 
       ////////// Multiple Image Upload Start ///////////
