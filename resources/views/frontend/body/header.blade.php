@@ -230,10 +230,37 @@
 
 
      <li> <a href="{{ route('shop.page') }}">Shop</a> </li>
+  @php
+  $brands = App\Models\Brand::orderBy('brand_name_en','ASC')->get();
+  //dd($categories);
+  @endphp
+     <li class="dropdown yamm mega-menu"> <a href="{{ route('shop.page') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Brand</a>
+          <ul class="dropdown-menu container">
+           
+              <li>
+                  <div class="yamm-content ">
+                      <div class="row">
+                      @foreach($brands as $k=>$brand)
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-menu">
+                        <a href="{{ url('brand/product/'.$brand->id.'/'.$brand->brand_slug_en ) }}">
+              <h2 class="title">
+@if(session()->get('language') == 'hindi') {{ $brand->brand_name_hin }} @else {{ $brand->brand_name_en }} @endif
+                </h2> </a>
+                        </div> 
+                       @endforeach 
+                      </div>
+                    </div> 
+                </li>
+           
+           </ul> 
+    
+    
+    </li>
+      
                
-                <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
+            <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
 
- <li class="dropdown  navbar-right special-menu"> <a href="{{ route('home.blog') }}">Blog</a> </li>
+           <li class="dropdown  navbar-right special-menu"> <a href="{{ route('home.blog') }}">Blog</a> </li>
 
 
               </ul>

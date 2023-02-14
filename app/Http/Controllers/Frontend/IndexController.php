@@ -159,6 +159,7 @@ class IndexController extends Controller
 		$categories = Category::orderBy('category_name_en','ASC')->get();
 
 		$breadsubcat = SubCategory::with(['category'])->where('id',$subcat_id)->get();
+		//dd($breadsubcat);
 
 
 		///  Load More Product with Ajax 
@@ -183,6 +184,25 @@ class IndexController extends Controller
 		$breadsubsubcat = SubSubCategory::with(['category','subcategory'])->where('id',$subsubcat_id)->get();
 
 		return view('frontend.product.sub_subcategory_view',compact('products','categories','breadsubsubcat'));
+
+	}
+
+
+	//brand wise data
+	public function BrandWiseProduct(Request $request,$brand_id,$slug){
+		$products = Product::where('status',1)->where('brand_id',$brand_id)->orderBy('id','DESC')->paginate(3);
+		$categories = Category::orderBy('category_name_en','ASC')->get();
+		$breadsubcat = Brand::where('id',$brand_id)->get();
+
+
+		if ($request->ajax()) {
+			$grid_view = view('frontend.product.grid_view_product',compact('products'))->render();
+		 
+			$list_view = view('frontend.product.list_view_product',compact('products'))->render();
+			 return response()->json(['grid_view' => $grid_view,'list_view',$list_view]);	
+		 
+		 }
+		 return view('frontend.product.brand_view',compact('products','categories','breadsubcat'));
 
 	}
 
