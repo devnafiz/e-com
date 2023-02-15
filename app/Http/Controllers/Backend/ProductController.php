@@ -28,9 +28,9 @@ class ProductController extends Controller
 	public function StoreProduct(Request $request){
 		
 
-    $request->validate([
-      'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
-    ]);
+    // $request->validate([
+    //   'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
+    // ]);
 
     if ($files = $request->file('file')) {
       $destinationPath = 'upload/pdf'; // upload path
@@ -52,7 +52,7 @@ class ProductController extends Controller
       	// 'subsubcategory_id' => $request->subsubcategory_id,
       	'product_name_en' => $request->product_name_en,
       	'product_name_hin' => $request->product_name_hin,
-      	'product_slug_en' =>  strtolower(str_replace(' ', '-', $request->product_name_en)),
+      	'product_slug_en' =>  strtolower(preg_replace('/[^\w\d]+/', '-', $request->product_name_en)),
       	'product_slug_hin' => str_replace(' ', '-', $request->product_name_hin),
       	'product_code' => $request->product_code,
 
@@ -153,7 +153,7 @@ class ProductController extends Controller
       	'subsubcategory_id' => $request->subsubcategory_id,
       	'product_name_en' => $request->product_name_en,
       	'product_name_hin' => $request->product_name_hin,
-      	'product_slug_en' =>  strtolower(str_replace(' ', '-', $request->product_name_en)),
+      	'product_slug_en' =>  strtolower(preg_replace('/[^\w\d]+/', '-', $request->product_name_en)),
       	'product_slug_hin' => str_replace(' ', '-', $request->product_name_hin),
       	'product_code' => $request->product_code,
 
