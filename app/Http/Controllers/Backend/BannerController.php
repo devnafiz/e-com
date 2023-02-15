@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Banner;
+use App\Models\BannerPosition;
 
 class BannerController extends Controller
 {
@@ -14,7 +16,9 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        $data['all_data']=Banner::orderByDesc('id')->paginate(10);
+
+        return view('backend.banner.index',$data);
     }
 
     /**

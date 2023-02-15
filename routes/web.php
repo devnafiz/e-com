@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\AdminUserController;
+use App\Http\Controllers\Backend\BannerController;
   
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
@@ -200,6 +201,12 @@ Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('sli
 Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
 
 Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
+
+});
+
+Route::middleware(['auth:admin'])->prefix('admin')->group(function(){
+
+     Route::resource('/banner',BannerController::class);
 
 });
 
