@@ -207,6 +207,7 @@ Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('sli
 Route::middleware(['auth:admin'])->prefix('admin')->group(function(){
 
      Route::resource('/banner',BannerController::class);
+     Route::get('/banner/delete/{id}', [BannerController::class, 'bannerDelete'])->name('banner.delete');
 
 });
 

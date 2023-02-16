@@ -16,9 +16,11 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $data['all_data']=Banner::orderByDesc('id')->paginate(10);
+        $all_data=Banner::orderByDesc('id')->paginate(10);
+        $positions_data=BannerPosition::where('status','1')->get();
+        //dd( $data['positions_data']);
 
-        return view('backend.banner.index',$data);
+        return view('backend.banner.index',compact('all_data','positions_data'));
     }
 
     /**
@@ -39,7 +41,23 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $banner_data= $this->BannerValidation();
+
+       if ($request != null && !empty($request->file('image'))) {
+        $banner_iamge = uniqid() . '.' . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path('upload/banner/'), $banner_iamge);
+        $banner_data['image'] = $banner_iamge;
+     }
+
+      Banner::insertGetId($banner_data);
+      $notification = array(
+        'message' => 'Banner Inserted Successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+      
+        
     }
 
     /**
@@ -61,7 +79,9 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit_data=Banner::where('id',$id)->first();
+        $positions_data=BannerPosition::where('status','1')->get();
+        return view('backend.banner.edit',compact('edit_data','positions_data'));
     }
 
     /**
@@ -73,7 +93,22 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $banner_data= $this->BannerValidation();
+        if ($request != null && !empty($request->file('image'))) {
+            $banner_iamge = uniqid() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('upload/banner/'), $banner_iamge);
+            $banner_data['image'] = $banner_iamge;
+         }
+
+         $banner = Banner::where('id', $id)->first();
+         $banner->update($banner_data);
+
+         $notification = array(
+            'message' => 'Banner Update Successfully',
+            'alert-type' => 'success'
+        );
+    
+        return redirect()->back()->with($notification);
     }
 
     /**
@@ -85,5 +120,35 @@ class BannerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function bannerDelete($id){
+
+        $banner = Banner::findOrFail($id);
+    	$img = $banner->image;
+    	unlink($img);
+    	Banner::findOrFail($id)->delete();
+
+    	$notification = array(
+			'message' => 'Banner Delectd Successfully',
+			'alert-type' => 'info'
+		);
+
+		return redirect()->back()->with($notification);
+    }
+
+    public function BannerValidation(){
+
+
+        return request()->validate([
+             'name'=>'nullable|string',
+             'position_id'=>'nullable',
+             'width'=>'nullable|string',
+             'height'=>'nullable|string',
+             'image' =>'nullable|file',  
+
+
+
+        ]);
     }
 }

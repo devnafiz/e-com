@@ -16,6 +16,7 @@ use App\Models\BlogPost;
 
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
+use App\Models\Banner;
  
 class IndexController extends Controller
 {
@@ -24,6 +25,11 @@ class IndexController extends Controller
     	$products = Product::where('status',1)->orderBy('id','DESC')->limit(6)->get();
     	$sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
     	$categories = Category::orderBy('category_name_en','ASC')->get();
+		
+		$home_banner_one=Banner::where('status',1)->where('position_id',1)->first();
+		$home_banner_two=Banner::where('status',1)->where('position_id',2)->first();
+		$home_banner_three=Banner::where('status',1)->where('position_id',3)->first();
+		//dd($home_banner_one);
 
     	$featured = Product::where('featured',1)->orderBy('id','DESC')->limit(6)->get();
     	$hot_deals = Product::where('hot_deals',1)->where('discount_price','!=',NULL)->orderBy('id','DESC')->limit(3)->get();

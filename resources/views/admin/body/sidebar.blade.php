@@ -65,6 +65,20 @@
             
           </ul>
         </li> 
+
+        <li class="treeview {{ ($prefix == '/admin/banner')?'active':'' }}  ">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Banner</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ ($route == 'banner.index')? 'active':'' }}"><a href="{{ route('banner.index') }}"><i class="ti-more"></i>All Banner</a></li>
+            
+          </ul>
+        </li> 
       
 		  
     
