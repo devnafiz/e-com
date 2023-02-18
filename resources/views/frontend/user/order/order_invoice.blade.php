@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>HashCollection</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+               {{$site_setting->company_name ?? ''}}
+               Email:{{	$site_setting->email ?? ''}} <br>
+               Mob: {{	$site_setting->phone_one ?? ''}} <br>
+               {{	$site_setting->company_address	?? ''}} <br>
               
             </pre>
         </td>
@@ -103,8 +103,8 @@
       <tr class="font">
         <th>Image</th>
         <th>Product Name</th>
-        <th>Size</th>
-        <th>Color</th>
+        <!-- <th>Size</th>
+        <th>Color</th> -->
         <th>Code</th>
         <th>Quantity</th>
         <th>Unit Price </th>
@@ -119,7 +119,7 @@
             <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td>
         <td align="center"> {{ $item->product->product_name_en }}</td>
-        <td align="center">
+        <!-- <td align="center">
 
           @if($item->size == NULL)
            ----
@@ -128,7 +128,7 @@
           @endif
             
         </td>
-        <td align="center">{{ $item->color }}</td>
+        <td align="center">{{ $item->color }}</td> -->
         <td align="center">{{ $item->product->product_code }}</td>
         <td align="center">{{ $item->qty }}</td>
         <td align="center">${{ $item->price }}</td>

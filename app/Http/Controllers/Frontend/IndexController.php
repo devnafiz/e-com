@@ -17,6 +17,9 @@ use App\Models\BlogPost;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
 use App\Models\Banner;
+
+use App\Models\OrderItem;
+
  
 class IndexController extends Controller
 {
@@ -30,6 +33,10 @@ class IndexController extends Controller
 		$home_banner_two=Banner::where('status',1)->where('position_id',2)->first();
 		$home_banner_three=Banner::where('status',1)->where('position_id',3)->first();
 		//dd($home_banner_one);
+
+		$best_seller =OrderItem::with('Product')->orderBy('id','DESC')->limit(12)->get();
+		//dd($best_seller);
+		//best sale
 
     	$featured = Product::where('featured',1)->orderBy('id','DESC')->limit(6)->get();
     	$hot_deals = Product::where('hot_deals',1)->where('discount_price','!=',NULL)->orderBy('id','DESC')->limit(3)->get();
