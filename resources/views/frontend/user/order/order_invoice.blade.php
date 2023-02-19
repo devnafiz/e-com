@@ -50,7 +50,7 @@
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
           <h2 style="color: green; font-size: 26px;"><strong>HashCollection</strong></h2>
         </td>
-        <td align="right">
+        <td align="left">
             <pre class="font" >
                {{$site_setting->company_name ?? ''}}
                Email:{{	$site_setting->email ?? ''}} <br>
@@ -103,8 +103,8 @@
       <tr class="font">
         <th>Image</th>
         <th>Product Name</th>
-        <!-- <th>Size</th>
-        <th>Color</th> -->
+        <th>Size</th>
+         <!-- <th>Color</th> -->
         <th>Code</th>
         <th>Quantity</th>
         <th>Unit Price </th>
@@ -119,7 +119,7 @@
             <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td>
         <td align="center"> {{ $item->product->product_name_en }}</td>
-        <!-- <td align="center">
+        <td align="center">
 
           @if($item->size == NULL)
            ----
@@ -128,7 +128,7 @@
           @endif
             
         </td>
-        <td align="center">{{ $item->color }}</td> -->
+        <!-- <td align="center">{{ $item->color }}</td> -->
         <td align="center">{{ $item->product->product_code }}</td>
         <td align="center">{{ $item->qty }}</td>
         <td align="center">${{ $item->price }}</td>

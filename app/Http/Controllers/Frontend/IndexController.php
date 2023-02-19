@@ -19,6 +19,7 @@ use App\Models\SubSubCategory;
 use App\Models\Banner;
 
 use App\Models\OrderItem;
+use DB;
 
  
 class IndexController extends Controller
@@ -34,7 +35,16 @@ class IndexController extends Controller
 		$home_banner_three=Banner::where('status',1)->where('position_id',3)->first();
 		//dd($home_banner_one);
 
-		$best_seller =OrderItem::with('Product')->orderBy('id','DESC')->limit(12)->get();
+		 $best_seller = DB::table('order_items')
+           ->leftJoin('products','products.id','=','order_items.product_id')
+           ->select('products.id','products.product_name_en','order_items.product_id','products.selling_price','products.product_thambnail','products.product_slug_en',
+                DB::raw('SUM(order_items.qty) as total'))
+           ->groupBy('products.id','order_items.product_id','products.product_name_en')
+           ->orderBy('total','desc')
+           ->limit(12)
+           ->get();
+
+
 		//dd($best_seller);
 		//best sale
 

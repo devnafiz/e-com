@@ -962,12 +962,15 @@ Home Easy Online Shop
             <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
               <div class="item">
                 <div class="products best-product">
+                
                   <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
+                 
+                    <div class="product-micro row">
+                    @foreach($best_seller as $best)
+                      <div class=" product-micro-row col-md-4">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="{{ asset('frontend/assets/images/products/p20.jpg') }}" alt=""> </a> </div>
+                            <div class="image"> <a href="#"> <img src="{{ asset($best->product_thambnail) }}" alt=""> </a> </div>
                             <!-- /.image --> 
                             
                           </div>
@@ -976,20 +979,23 @@ Home Easy Online Shop
                         <!-- /.col -->
                         <div class="col2 col-xs-7">
                           <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Buttoned</a></h3>
+                            <h3 class="name"><a href="{{ url('product/details/'.$best->product_id.'/'.$best->product_slug_en )}}">{{$best->product_name_en ?? ''}}</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> ${{$best->selling_price}} </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
                         </div>
                         <!-- /.col --> 
                       </div>
+                      @endforeach
                       <!-- /.product-micro-row --> 
                     </div>
+                   
                     <!-- /.product-micro --> 
                     
                   </div>
+                
                   <div class="product">
                     <div class="product-micro">
                       <div class="row product-micro-row">
