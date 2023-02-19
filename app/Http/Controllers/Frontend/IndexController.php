@@ -39,10 +39,11 @@ class IndexController extends Controller
            ->leftJoin('products','products.id','=','order_items.product_id')
            ->select('products.id','products.product_name_en','order_items.product_id','products.selling_price','products.product_thambnail','products.product_slug_en',
                 DB::raw('SUM(order_items.qty) as total'))
-           ->groupBy('products.id','order_items.product_id','products.product_name_en')
+           ->groupBy('products.id','order_items.product_id','products.product_name_en','products.selling_price','products.product_thambnail','products.product_slug_en')
            ->orderBy('total','desc')
            ->limit(12)
            ->get();
+		   
 
 
 		//dd($best_seller);
@@ -72,7 +73,7 @@ class IndexController extends Controller
     	// return $skip_category->id;
     	// die();
 
-    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1','blogpost','home_banner_one','home_banner_two','home_banner_three'));
+    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1','blogpost','home_banner_one','home_banner_two','home_banner_three','best_seller'));
 
     }
 

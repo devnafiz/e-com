@@ -136,8 +136,8 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 			</td>
 
 			<td class="text-right">
-				<a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-bookmark-plus"></span></a>
-				<a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
+				<!-- <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-bookmark-plus"></span></a> -->
+				<a href="{{route('pending.order.details',$item->id)}}" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
 			</td>
 		</tr>
 		@endforeach
