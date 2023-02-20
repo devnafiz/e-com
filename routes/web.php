@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\AdminUserController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\TestimonialController;
   
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
@@ -208,6 +209,12 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function(){
 
      Route::resource('/banner',BannerController::class);
      Route::get('/banner/delete/{id}', [BannerController::class, 'bannerDelete'])->name('banner.delete');
+
+     Route::resource('/testimonial',TestimonialController::class);
+     Route::get('/testimonial/delete/{id}', [TestimonialController::class, 'testimonialDel'])->name('testimonial.delete');
+     Route::get('/inactive/{id}', [TestimonialController::class, 'testimonialInactive'])->name('testimonial.inactive');
+
+     Route::get('/active/{id}', [TestimonialController::class, 'testimonialActive'])->name('testimonial.active');
 
 });
 

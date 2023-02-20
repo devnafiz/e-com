@@ -1,26 +1,21 @@
+  
+  <?php
+    $testimonial= App\Models\Testimonial::where('status',1)->get();
+  ?>
   <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
               <div id="advertisement" class="advertisement">
+
+              @foreach($testimonial as $val)
                 <div class="item"> 
-                  <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member1.png') }}" alt="Image"></div>
-                  <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                  <div class="clients_author">John Doe <span>Abc Company</span> </div>
+                  <div class="avatar"><img src="{{ asset('upload/testimonial/'.$val->image) }}" alt="Image"></div>
+                  <div class="testimonials"><em>"</em>{{$val->comment}}<em>"</em></div>
+                  <div class="clients_author">{{$val->name}} <span>{{$val->position}}</span> </div>
                   <!-- /.container-fluid --> 
                 </div>
+               @endforeach 
                 <!-- /.item -->
                 
-                <div class="item">
-                  <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member3.png') }}" alt="Image"></div>
-                  <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                  <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
-                </div>
-                <!-- /.item -->
-                
-                <div class="item">
-                  <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member2.png') }}" alt="Image"></div>
-                  <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                  <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
-                  <!-- /.container-fluid --> 
-                </div>
+               
                 <!-- /.item --> 
                 
               </div>

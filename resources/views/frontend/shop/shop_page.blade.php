@@ -180,7 +180,7 @@ Shop Page
             <!-- /.sidebar-widget --> 
             <!-- ============================================== PRICE SILDER : END ============================================== --> 
             <!-- ============================================== MANUFACTURES============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
+            <!--<div class="sidebar-widget wow fadeInUp">
               <div class="widget-header">
                 <h4 class="widget-title">Manufactures</h4>
               </div>
@@ -193,10 +193,10 @@ Shop Page
                   <li><a href="#">Chanel</a></li>
                   <li><a href="#">Other Brand</a></li>
                 </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
+               <a href="#" class="lnk btn btn-primary">Show Now</a>
               </div>
-              <!-- /.sidebar-widget-body --> 
-            </div>
+            
+            </div>-->
             <!-- /.sidebar-widget --> 
             <!-- ============================================== MANUFACTURES: END ============================================== --> 
             <!-- ============================================== COLOR============================================== -->
