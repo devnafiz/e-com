@@ -145,7 +145,7 @@ class BannerController extends Controller
              'position_id'=>'nullable',
              'width'=>'nullable|string',
              'height'=>'nullable|string',
-             'image' =>'nullable|file',  
+             'image' =>'required|file',  
 
 
 

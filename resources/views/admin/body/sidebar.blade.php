@@ -79,6 +79,19 @@
             
           </ul>
         </li> 
+        <li class="treeview {{ ($prefix == '/admin/testimonial')?'active':'' }}  ">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Testimonial</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ ($route == 'testimonial.index')? 'active':'' }}"><a href="{{ route('testimonial.index') }}"><i class="ti-more"></i>All Banner</a></li>
+            
+          </ul>
+        </li> 
       
 		  
     

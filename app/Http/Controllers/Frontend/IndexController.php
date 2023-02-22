@@ -34,6 +34,9 @@ class IndexController extends Controller
 		$home_banner_two=Banner::where('status',1)->where('position_id',2)->first();
 		$home_banner_three=Banner::where('status',1)->where('position_id',3)->first();
 		//dd($home_banner_one);
+		$footer_logo=Banner::where('status',1)->where('position_id',4)->get();
+		//dd($home_banner_one);
+
 
 		 $best_seller = DB::table('order_items')
            ->leftJoin('products','products.id','=','order_items.product_id')
@@ -73,7 +76,7 @@ class IndexController extends Controller
     	// return $skip_category->id;
     	// die();
 
-    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1','blogpost','home_banner_one','home_banner_two','home_banner_three','best_seller'));
+    	return view('frontend.index',compact('categories','sliders','products','featured','hot_deals','special_offer','special_deals','skip_category_0','skip_product_0','skip_category_1','skip_product_1','skip_brand_1','skip_brand_product_1','blogpost','home_banner_one','home_banner_two','home_banner_three','best_seller','footer_logo'));
 
     }
 
@@ -230,7 +233,8 @@ class IndexController extends Controller
 			 return response()->json(['grid_view' => $grid_view,'list_view',$list_view]);	
 		 
 		 }
-		 return view('frontend.product.brand_view',compact('products','categories','breadsubcat'));
+		 $brand_banner=Banner::where('status',1)->where('position_id',6)->first();
+		 return view('frontend.product.brand_view',compact('products','categories','breadsubcat','brand_banner'));
 
 	}
 

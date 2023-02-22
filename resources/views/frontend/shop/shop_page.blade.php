@@ -200,7 +200,7 @@ Shop Page
             <!-- /.sidebar-widget --> 
             <!-- ============================================== MANUFACTURES: END ============================================== --> 
             <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
+            <!-- <div class="sidebar-widget wow fadeInUp">
               <div class="widget-header">
                 <h4 class="widget-title">Colors</h4>
               </div>
@@ -214,8 +214,8 @@ Shop Page
                   <li><a href="#">Teal</a></li>
                 </ul>
               </div>
-              <!-- /.sidebar-widget-body --> 
-            </div>
+             
+            </div> -->
             <!-- /.sidebar-widget --> 
             <!-- ============================================== COLOR: END ============================================== --> 
             <!-- == ======= COMPARE==== ==== -->
