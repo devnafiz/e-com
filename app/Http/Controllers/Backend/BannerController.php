@@ -126,7 +126,7 @@ class BannerController extends Controller
 
         $banner = Banner::findOrFail($id);
     	$img = $banner->image;
-    	unlink($img);
+        unlink('upload/banner/'.$img);
     	Banner::findOrFail($id)->delete();
 
     	$notification = array(
