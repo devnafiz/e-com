@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\AdminUserController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Backend\PageController;
   
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
@@ -215,6 +216,11 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function(){
      Route::get('/inactive/{id}', [TestimonialController::class, 'testimonialInactive'])->name('testimonial.inactive');
 
      Route::get('/active/{id}', [TestimonialController::class, 'testimonialActive'])->name('testimonial.active');
+
+     Route::resource('/pages',PageController::class);
+     Route::get('/pages/delete/{id}', [PageController::class, 'pageDel'])->name('page.delete');
+     Route::get('page/inactive/{id}', [PageController::class, 'pageInactive'])->name('page.inactive');
+     Route::get('/page/active/{id}', [PageController::class, 'pageActive'])->name('page.active');
 
 });
 
