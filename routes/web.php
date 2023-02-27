@@ -235,7 +235,7 @@ Route::get('/language/english', [LanguageController::class, 'English'])->name('e
 
 //page url
 
-Route::get('/page/{slug}', [IndexController::class, 'PageDetails']);
+Route::get('/page/{slug}', [IndexController::class, 'PageDetails'])->name('page.show');
 
 
 // Frontend Product Details Page url 
