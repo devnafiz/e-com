@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use Image;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class PageController extends Controller
 {
@@ -92,7 +93,8 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['edit_data']=Page::where('id',$id)->first();
+        return view('backend.pages.edit',$data);
     }
 
     /**
@@ -104,7 +106,24 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page_data= $this->PageValidation();
+
+        if ($request != null && !empty($request->file('page_image'))) {
+            $banner_iamge = uniqid() . '.' . $request->page_image->getClientOriginalExtension();
+            $request->page_image->move(public_path('upload/page/'), $banner_iamge);
+            $page_data['page_image'] = $banner_iamge;
+         }
+
+         Page::findOrFail($id)->update($page_data); 
+         
+         $notification = array(
+			'message' => 'Page Update Successfully',
+			'alert-type' => 'success'
+		);
+
+		return redirect()->back()->with($notification);
+
+        
     }
 
     /**
@@ -161,7 +180,7 @@ class PageController extends Controller
 
         return request()->validate([
              'category_id'=>'nullable|string',
-             'page_title_en'=>'requried|string|max:256',
+             'page_title_en'=>'string|max:256',
              'page_details_en'=>'nullable|string',
              'status'=>'nullable|string',
              'page_image' =>'nullable|file',  

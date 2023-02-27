@@ -233,6 +233,10 @@ Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi
 
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
+//page url
+
+Route::get('/page/{slug}', [IndexController::class, 'PageDetails']);
+
 
 // Frontend Product Details Page url 
 Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);

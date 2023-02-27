@@ -79,6 +79,20 @@
             
           </ul>
         </li> 
+
+        <li class="treeview {{ ($prefix == '/admin/pages')?'active':'' }}  ">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Pages</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ ($route == 'pages.index')? 'active':'' }}"><a href="{{ route('pages.index') }}"><i class="ti-more"></i>All Pages</a></li>
+            
+          </ul>
+        </li> 
         <li class="treeview {{ ($prefix == '/admin/testimonial')?'active':'' }}  ">
           <a href="#">
             <i data-feather="message-circle"></i>

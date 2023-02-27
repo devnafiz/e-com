@@ -20,6 +20,7 @@ use App\Models\Banner;
 
 use App\Models\OrderItem;
 use DB;
+use App\Models\Page;
 
  
 class IndexController extends Controller
@@ -287,6 +288,12 @@ class IndexController extends Controller
 
 
 	} // end method 
+
+	public function PageDetails(Request $request,$slug){
+
+		$data['all_data'] =Page::where('status','1')->where('page_slug_en',$slug)->first();
+	 return view('frontend.page.new_page',$data);
+	}
 
 
 
